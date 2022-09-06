@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 import React, { Suspense, useEffect } from 'react';
 import { useTranslation } from "react-i18next";
 // import { useNavigate } from "react-router-dom";
@@ -10,6 +10,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import Loader from './pages/UI/loader';
 // import Home from './components/home/home';
 const Home = React.lazy(() => import("./pages/home/index"));
+const Calculate = React.lazy(() => import("./pages/calculate/index"));
 
 
 function App() {
@@ -40,9 +41,23 @@ function App() {
                 <Route path="/home" element={
                     <Suspense fallback={<Loader/>}>
                         <Home/>
-                    </Suspense>} />
-                {/* <Route path="/calculate" element={<Calculate/>} /> */}
-                {/* <Route path="/contact" element={<Contact/>} /> */}
+                    </Suspense>
+                } />
+                <Route path="/calculate" element={
+                    <Suspense fallback={<Loader/>}>
+                        <Calculate/>
+                    </Suspense>
+                } />
+                <Route path="/" element={
+                    <Suspense fallback={<Loader/>}>
+                        <Navigate to="/home"  />
+                    </Suspense>
+                } />
+                <Route path="/contact" element={
+                    <Suspense fallback={<Loader/>}>
+                        <Navigate to="/home"  />
+                    </Suspense>
+                } />
             </Routes>
         </BrowserRouter>
     );
