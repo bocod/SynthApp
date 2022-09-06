@@ -18,6 +18,10 @@ export default function Calc(){
     const loanInterest = (loanCapital * (loanRate/100) * (Math.ceil((new Date(loanDueDate) - new Date())/86400000)/365)).toFixed(2);
     const loanTotal = loanCapital && loanInterest ? (parseFloat(loanCapital) + parseFloat(loanInterest)).toFixed(2) : "";
 
+    const fwdAmount = loanCapital;
+    const [spotRate, spotRateInput] = useInput({ type: "number" }, {label: "Spot Rate Amount"}); 
+    const spotAmount = (fwdAmount / spotRate).toFixed(2);
+
     return (
         <>
             Calculate View!
@@ -44,20 +48,28 @@ export default function Calc(){
 
                 <div className="input-group mb-3">
                     <span className="input-group-text">{t("Loan interest")}</span>
+                    <span className="input-group-text">$</span>
                     <input value={loanInterest} type="number" className="form-control" aria-label="Loan interest" disabled />
                 </div>
                 <div className="input-group mb-3">
                     <span className="input-group-text">{t("Loan total")}</span>
+                    <span className="input-group-text">$</span>
                     <input value={loanTotal} type="number" className="form-control" aria-label="Total amount of capital plus interest" disabled />
                 </div>
 
                 {/* Spot stage */}
-{/* 
+
                 <div className="input-group mb-3">
-                    <span className="input-group-text">{t("Loan")}$</span>
-                    <input type="number" className="form-control" aria-label="Amount (to the nearest dollar)" />
-                    <span className="input-group-text">.00</span>
-                </div> */}
+                    <span className="input-group-text">{t("Spot Rate")}</span>
+                    <span className="input-group-text">$</span>
+                    {spotRateInput}
+                </div>
+                <div className="input-group mb-3">
+                    <span className="input-group-text">{t("Loan capital in foreign currency")}</span>
+                    <input value={spotAmount} type="number" className="form-control" aria-label="Total amount of capital plus interest" disabled />
+                </div>
+
+                
             </div>
         </>
     )
