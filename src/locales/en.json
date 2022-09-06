@@ -1,0 +1,15 @@
+{
+    "appTitle": "SynthApp",
+
+    "Nav-Home": "Home",
+    "Nav-Calc": "Calculate",
+    "Nav-Contact": "Contact",
+    "language": "Language",
+    "english": "English",
+    "spanish":"Spanish",
+
+    "appHeader": "Synthetic loan",
+    "descTitle": "What is it?",
+    "description": "Is a financial tool, through wich you get a bullet loan in your local currency, for an equivalent amount to the foreign currency needed at the SPOT exchange rate. Simultaneously, the loan will be applied to a sell position of the foreign currency in the futures market to the exactly same term and amount (k+i) as the loan. The operation offsets exchange rates differences: Selled Future VS Reference exchange rate at due date (e.g.: in Argentina would be Com. BCRA 3500).",
+    "calc-btn": "Calculate"
+}
