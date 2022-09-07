@@ -12,6 +12,7 @@ import Loader from './pages/UI/loader';
 const Home = React.lazy(() => import("./pages/home/index"));
 const Synthetic = React.lazy(() => import("./pages/synthetic/index"));
 const DCPD = React.lazy(() => import("./pages/dcpd/index"));
+const Caution = React.lazy(() => import("./pages/caution/index"));
 
 
 function App() {
@@ -52,6 +53,11 @@ function App() {
                 <Route path="/calculate-postdated-cheques-discount" element={
                     <Suspense fallback={<Loader/>}>
                         <DCPD/>
+                    </Suspense>
+                } />
+                <Route path="/calculate-stock-caution" element={
+                    <Suspense fallback={<Loader/>}>
+                        <Caution/>
                     </Suspense>
                 } />
                 <Route path="/" element={
