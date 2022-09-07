@@ -150,17 +150,6 @@ export default function Calc(){
                     <i className="bi bi-tree text-black-50 fw-light ms-3"> {t("print-disclosure")}</i>
                 </div>
 
-                {/* ABBR */}
-
-                <div className="card m-auto mt-3 mb-3" style={{"width": "18rem"}}>
-                    <div className="card-body">
-                        <h5 className="card-title">{t("abbr-title")}</h5>
-                        <h6 className="card-subtitle mb-2 text-muted">{t("abbr-subtitle")}</h6>
-                        <p className="card-text">{t("abbr-LC")}</p>
-                        <p className="card-text">{t("abbr-FC")}</p>
-                        <p className="card-text">{t("abbr-NDF")}</p>
-                    </div>
-                </div>
             </form>
             <iframe title="Synthetic loan detail" id="contentToPrint" style={{"height": "0px", "width": "0px", "position": "absolute"}}></iframe>
             
