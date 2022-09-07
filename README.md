@@ -6,7 +6,7 @@ This app is meant to provide the user a tool to easily make finance calculations
 
 ## See it in action
 
-[FinApp Deploy](https://finapp-75cd3.web.app/home)
+[FinApp Deploy](https://finapp-75cd3.web.app/)
 
 ## Getting Started with Create React App
 
