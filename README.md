@@ -1,4 +1,14 @@
-# Getting Started with Create React App
+# Main objective
+
+Practice, learn, apply and demonstrate my knowledge in React, as well as other tools applyed to this project, and obviously in finance... why not?
+
+This app is meant to provide the user a tool to easily make finance calculations.
+
+## See it in action
+
+[FinApp Deploy](https://finapp-75cd3.web.app/home)
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
