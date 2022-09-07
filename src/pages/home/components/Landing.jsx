@@ -19,18 +19,35 @@ export default function Landing(){
                             <p className="card-text">{t("Synth-description-2")}</p>
                             <p className="card-text">{t("Synth-description-3")}</p>
                         </div>
-                    </div>
-                    <div className='mt-3 mb-3 text-center'>
-                        <NavLink to={"/calculate-synthetic"} className="btn btn-primary">{t("calc-btn")} {t("Synthetic")}</NavLink>
+                        <div className='mt-3 mb-3 text-center'>
+                            <NavLink to={"/calculate-synthetic"} className="btn btn-primary">{t("calc-btn")} {t("Synthetic")}</NavLink>
+                        </div>
                     </div>
                 </div>
                 <div className="accordion-item">
                     <h2 className="accordion-header" id="headingTwo">
                     <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        More calculators...
+                        {t("DCPD Loan")}
                     </button>
                     </h2>
                     <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                    <div className="accordion-body">
+                            <p className="card-text">{t("DCPD-description-1")}</p>
+                            <p className="card-text">{t("DCPD-description-2")}</p>
+                            <p className="card-text">{t("DCPD-description-3")}</p>
+                        </div>
+                        <div className='mt-3 mb-3 text-center'>
+                            <NavLink to={"/calculate-postdated-cheques-discount"} className="btn btn-primary">{t("calc-btn")} {t("DCPD Loan")}</NavLink>
+                        </div>
+                    </div>
+                </div>
+                <div className="accordion-item">
+                    <h2 className="accordion-header" id="headingThree">
+                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        More calculators...
+                    </button>
+                    </h2>
+                    <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                     <div className="accordion-body">
                         <p><strong>Upcoming next...</strong></p>
                         <p>New features are being developed to make your financial calculations easier!</p>

@@ -49,7 +49,7 @@ function App() {
                         <Synthetic/>
                     </Suspense>
                 } />
-                <Route path="/calculate-pd-cheques-discount" element={
+                <Route path="/calculate-postdated-cheques-discount" element={
                     <Suspense fallback={<Loader/>}>
                         <DCPD/>
                     </Suspense>

@@ -16,6 +16,10 @@
     "calc-btn": "Calcular",
     "disclosure": "Herramienta con fines educativos y recreativos, úsela a su propio riesgo, siempre busque asesoramiento de un profesional certificado.",
 
+    "DCPD-description-1": "Es una herramienta financiera para adelantar los plazos de cobro de los cheques de pago diferido.",
+    "DCPD-description-2": "El tenedor de los cheques transfiere los derechos de cobro (endoso o cesión) a una entidad a cambio de que esta le adelante el importe.",
+    "DCPD-description-3": "La entidad adelanta los fondos previo restar tasas y comisiones.",
+
     "how to use": "Cómo usar la calculadora",
     "calc-use-1": "Todos los campos deben completarse.",
     "calc-use-2": "A medidas que completes cada entrada, la aplicación automáticamente hará cálculos y mostrará los resultados.",
