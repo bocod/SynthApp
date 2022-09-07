@@ -8,9 +8,10 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import Loader from './pages/UI/loader';
-// import Home from './components/home/home';
+
 const Home = React.lazy(() => import("./pages/home/index"));
-const Calculate = React.lazy(() => import("./pages/calculate/index"));
+const Synthetic = React.lazy(() => import("./pages/synthetic/index"));
+const DCPD = React.lazy(() => import("./pages/dcpd/index"));
 
 
 function App() {
@@ -45,7 +46,12 @@ function App() {
                 } />
                 <Route path="/calculate-synthetic" element={
                     <Suspense fallback={<Loader/>}>
-                        <Calculate/>
+                        <Synthetic/>
+                    </Suspense>
+                } />
+                <Route path="/calculate-pd-cheques-discount" element={
+                    <Suspense fallback={<Loader/>}>
+                        <DCPD/>
                     </Suspense>
                 } />
                 <Route path="/" element={
@@ -53,7 +59,7 @@ function App() {
                         <Navigate to="/home"  />
                     </Suspense>
                 } />
-                <Route path="/contact" element={
+                <Route path="**" element={
                     <Suspense fallback={<Loader/>}>
                         <Navigate to="/home"  />
                     </Suspense>
