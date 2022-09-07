@@ -27,25 +27,24 @@ export default function Navbar(){
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container-fluid">
-                <a className="navbar-brand" href="/home">{t("appTitle")}</a>
+                <NavLink to={"/home"}  className="navbar-brand" aria-current="page"><i className="bi bi-piggy-bank"></i> {t("appTitle")}</NavLink>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                <div className="navbar-nav">
-                    <NavLink to={"/home"}  className="nav-link active" aria-current="page">{t("Nav-Home")}</NavLink>
-                    {/* <NavLink to={"/calculate"} className="nav-link" href="/home">{t("Nav-Calc")}</NavLink> */}
-                    <NavLink to={"/contact"} className="nav-link" href="/home">{t("Nav-Contact")}</NavLink>
-                    <li className="nav-item dropdown">
-                        <span className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            {t("language")}
-                        </span>
-                        <ul className="dropdown-menu dropdown-menu-dark">
-                            <li><span className="dropdown-item" onClick={() => handleLanguageSelectorChange("en")}>{t("english")}</span></li>
-                            <li><span className="dropdown-item" onClick={() => handleLanguageSelectorChange("es")}>{t("spanish")}</span></li>
-                        </ul>
+                    <div className="navbar-nav">
+                        <NavLink to={"/home"}  className="nav-link active" aria-current="page">{t("Nav-Home")}</NavLink>
+                        <a href="https://www.linkedin.com/in/agustinboccio/" target="_blank" rel="noreferrer" className="nav-link">{t("Nav-Contact")}</a>
+                        <li className="nav-item dropdown">
+                            <span className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                {t("language")}
+                            </span>
+                            <ul className="dropdown-menu dropdown-menu-end dropdown-menu-dark">
+                                <li><span className="dropdown-item" onClick={() => handleLanguageSelectorChange("en")}>{t("english")}</span></li>
+                                <li><span className="dropdown-item" onClick={() => handleLanguageSelectorChange("es")}>{t("spanish")}</span></li>
+                            </ul>
                         </li>
-                </div>
+                    </div>
                 </div>
             </div>
         </nav>
