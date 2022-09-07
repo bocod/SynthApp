@@ -16,6 +16,10 @@
     "calc-btn": "Calculate",
     "disclosure": "Educational and recreational purposes only, use this tool at your own risk, always ask for certified professional advice.",
 
+    "DCPD-description-1": "Is a financial tool for advancing the payment deadlines in post dated cheques.",
+    "DCPD-description-2": "The cheques holder transfers the collection rights to an entity in exchange for the advancing of cash.",
+    "DCPD-description-3": "The entity advance the cash discounting taxes and commission.",
+
     "how to use": "How to use the calculator",
     "calc-use-1": "All input fields must be fulfilled.",
     "calc-use-2": "As you fulfill the data, the app will automaticaly make calculations and show the results",
@@ -29,6 +33,8 @@
     "abbr-LC": "LC: Local Currency",
     "abbr-NDF": "NDF: Non Deliverable Forward",
 
+    "Print": "Print",
+    "print-disclosure":"Remember 'Save as PDF'",
     "Loan": "Loan",
     "Spot": "Spot",
     "Future selling": "Future Selling",
@@ -52,5 +58,16 @@
     "Spot price": "Spot price",
     "NDF price": "NDF price",
     "NDF implied rate": "NDF implied rate",
-    "Synthetic implied rate": "Synthetic implied rate"
+    "Synthetic implied rate": "Synthetic implied rate",
+
+    "DCPD Loan": "Post dated cheques discount",
+    "Commission": "Commission",
+    "Subtotal": "Subtotal",
+    "Gross cost": "Gross cost",
+    "Discount rate before taxes": "Discount rate before taxes",
+    "Cost before taxes": "Cost before taxes",
+    "Stamp tax": "Stamp tax",
+    "Cheques tax": "Cheques tax",
+    "IVA": "IVA",
+    "To be credited": "To be credited"
 }

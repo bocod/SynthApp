@@ -16,6 +16,10 @@
     "calc-btn": "Calcular",
     "disclosure": "Herramienta con fines educativos y recreativos, úsela a su propio riesgo, siempre busque asesoramiento de un profesional certificado.",
 
+    "DCPD-description-1": "Es una herramienta financiera para adelantar los plazos de cobro de los cheques de pago diferido.",
+    "DCPD-description-2": "El tenedor de los cheques transfiere los derechos de cobro (endoso o cesión) a una entidad a cambio de que esta le adelante el importe.",
+    "DCPD-description-3": "La entidad adelanta los fondos previo restar tasas y comisiones.",
+
     "how to use": "Cómo usar la calculadora",
     "calc-use-1": "Todos los campos deben completarse.",
     "calc-use-2": "A medidas que completes cada entrada, la aplicación automáticamente hará cálculos y mostrará los resultados.",
@@ -29,6 +33,8 @@
     "abbr-LC": "ML: Moneda Local",
     "abbr-NDF": "NDF: Non Deliverable Forward",
 
+    "Print": "Imprimir",
+    "print-disclosure":"Recuerda 'Guardar como PDF'",
     "Loan": "Préstamo",
     "Spot": "Spot",
     "Future selling": "Venta de futuros",
@@ -52,5 +58,16 @@
     "Spot price": "Precio del Spot",
     "NDF price": "Precio del NDF",
     "NDF implied rate": "Tasa implícita del NDF",
-    "Synthetic implied rate": "Tasa implícita del sintético"
+    "Synthetic implied rate": "Tasa implícita del sintético",
+
+    "DCPD Loan": "Descuento de CPD",
+    "Commission": "Comisión",
+    "Subtotal": "Subtotal",
+    "Gross cost": "Costo bruto",
+    "Discount rate before taxes": "Tasa antes de impuestos",
+    "Cost before taxes": "Costo antes de impuestos",
+    "Stamp tax": "Impuesto de sellos",
+    "Cheques tax": "Impuesto de cheques",
+    "IVA": "IVA",
+    "To be credited": "A acreditar en cuenta"
 }
