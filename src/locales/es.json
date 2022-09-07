@@ -27,6 +27,7 @@
     "calc-use-4": "Elige siempre la opción de 'Guardar a PDF'.",
     "calc-use-5": "Evita imprimir en papel.",
 
+    "references-title": "Referencias",
     "abbr-title" : "Abreviaturas",
     "abbr-subtitle" : "Guía de términos",
     "abbr-FC": "ME: Moneda Extranjera",
@@ -69,5 +70,15 @@
     "Stamp tax": "Impuesto de sellos",
     "Cheques tax": "Impuesto de cheques",
     "IVA": "IVA",
-    "To be credited": "A acreditar en cuenta"
+    "To be credited": "A acreditar en cuenta",
+
+    "Stock Caution": "Caución Bursatil",
+    "Capital to caution": "Capital a caucionar",
+    "Rate": "Tasa",
+    "Gross profit": "Interés bruto",
+    "Net profit": "Interés neto",
+
+    "ref-commission": "Comisión: 0,15%",
+    "ref-IVA": "IVA: 21%",
+    "ref-market-fee": "Market fee: 0,045%"
 }

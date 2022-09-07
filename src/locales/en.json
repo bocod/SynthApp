@@ -27,6 +27,7 @@
     "calc-use-4": "Choose always 'Save to PDF' option.",
     "calc-use-5": "Avoid printing on paper.",
 
+    "references-title": "References",
     "abbr-title" : "Abbreviations",
     "abbr-subtitle" : "Terms guide",
     "abbr-FC": "FC: Foreign Currency",
@@ -69,5 +70,11 @@
     "Stamp tax": "Stamp tax",
     "Cheques tax": "Cheques tax",
     "IVA": "IVA",
-    "To be credited": "To be credited"
+    "To be credited": "To be credited",
+
+    "Stock Caution": "Stock Caution",
+    "Capital to caution": "Capital to caution",
+    "Rate": "Rate",
+    "Gross profit": "Gross profit",
+    "Net profit": "Net profit"
 }
