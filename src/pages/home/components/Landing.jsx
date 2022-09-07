@@ -11,11 +11,13 @@ export default function Landing(){
             </div>
             <div className="card-body">
                 <h5 className="card-title">{t("descTitle")}</h5>
-                <p className="card-text">{t("description")}</p>
+                <p className="card-text">{t("description-1")}</p>
+                <p className="card-text">{t("description-2")}</p>
+                <p className="card-text">{t("description-3")}</p>
                 <NavLink to={"/calculate"} className="btn btn-primary">{t("calc-btn")}</NavLink>
             </div>
             <div className="card-footer text-muted">
-                2 days ago
+                {t("disclosure")}
             </div>
         </div>
     )

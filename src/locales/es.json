@@ -10,8 +10,11 @@
 
     "appHeader": "Préstamo sintético",
     "descTitle": "¿En qué consiste?",
-    "description": "Es una herramienta financiera por la que se toma un préstamo en moneda local por importe equivalente a los USD necesitados al tipo de cambio SPOT, cuyo destino será aplicarlos, en simultáneo, a la venta de dolar futuro a igual plazo que el préstamo, y por importe equivalente a capital + intereses. La operación compensa por diferencias de tipo de cambio: Futuro vendido VS Com. BCRA 3500 de la fecha de vencimiento.",
+    "description-1": "Es una herramienta financiera por la que se toma un préstamo en moneda local por importe equivalente a los USD necesitados al tipo de cambio SPOT.",
+    "description-2": "Cuyo destino será aplicarlos, en simultáneo, a la venta de dolar futuro a igual plazo que el préstamo, y por importe equivalente a capital + intereses.",
+    "description-3": "La operación compensa por diferencias de tipo de cambio: Futuro vendido VS Com. BCRA 3500 de la fecha de vencimiento.",
     "calc-btn": "Calcular",
+    "disclosure": "Herramienta con fines educativos y recreativos, úsela a su propio riesgo, siempre busque asesoramiento de un profesional certificado.",
 
     "abbr-title" : "Abreviaturas",
     "abbr-subtitle" : "Guía de términos",
