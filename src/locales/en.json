@@ -10,6 +10,34 @@
 
     "appHeader": "Synthetic loan",
     "descTitle": "What is it?",
-    "description": "Is a financial tool, through wich you get a bullet loan in your local currency, for an equivalent amount to the foreign currency needed at the SPOT exchange rate. Simultaneously, the loan will be applied to a sell position of the foreign currency in the futures market to the exactly same term and amount (k+i) as the loan. The operation offsets exchange rates differences: Selled Future VS Reference exchange rate at due date (e.g.: in Argentina would be Com. BCRA 3500).",
-    "calc-btn": "Calculate"
+    "description-1": "Is a financial tool, through wich you get a bullet loan in your local currency, for an equivalent amount to the foreign currency needed at the SPOT exchange rate.",
+    "description-2": "Simultaneously, the loan will be applied to a sell position of the foreign currency in the futures market to the exactly same term and amount (k+i) as the loan.",
+    "description-3": "The operation offsets exchange rates differences: Selled Future VS Reference exchange rate at due date (e.g.: in Argentina would be Com. BCRA 3500).",
+    "calc-btn": "Calculate",
+    "disclosure": "Educational and recreational purposes only, use this tool at your own risk, always ask for certified professional advice.",
+
+    "abbr-title" : "Abbreviations",
+    "abbr-subtitle" : "Terms guide",
+    "abbr-FC": "FC: Foreign Currency",
+    "abbr-LC": "LC: Local Currency",
+    "abbr-NDF": "NDF: Non Deliverable Forward",
+
+    "calc-title1": "Loan in LC",
+    "calc-title2": "Spot",
+    "calc-title3": "Future Selling - NDF",
+    "calc-title4": "SYNTHETIC IMPLIED RATE",
+
+    "calc-input1" : "Loan Capital",
+    "calc-input2" : "Loan Rate",
+    "calc-input3" : "Due Date",
+    "calc-input4" : "Term",
+    "calc-input5" : "Interest",
+    "calc-input6" : "Total",
+    "calc-input7" : "SPOT price",
+    "calc-input8" : "Loan Capital in FC",
+    "calc-input9" : "NDF price",
+    "calc-input10" : "NDF implied rate",
+    "calc-input11" : "Implied interest in FC",
+    "calc-input12" : "Total in FC",
+    "calc-input13" : "Synthetic implied rate"
 }
