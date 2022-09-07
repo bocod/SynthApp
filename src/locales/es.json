@@ -29,6 +29,8 @@
     "abbr-LC": "ML: Moneda Local",
     "abbr-NDF": "NDF: Non Deliverable Forward",
 
+    "Print": "Imprimir",
+    "print-disclosure":"Recuerda 'Guardar como PDF'",
     "Loan": "Préstamo",
     "Spot": "Spot",
     "Future selling": "Venta de futuros",
@@ -52,5 +54,16 @@
     "Spot price": "Precio del Spot",
     "NDF price": "Precio del NDF",
     "NDF implied rate": "Tasa implícita del NDF",
-    "Synthetic implied rate": "Tasa implícita del sintético"
+    "Synthetic implied rate": "Tasa implícita del sintético",
+
+    "DCPD Loan": "Descuento de CPD",
+    "Commission": "Comisión",
+    "Subtotal": "Subtotal",
+    "Gross cost": "Costo bruto",
+    "Discount rate before taxes": "Tasa antes de impuestos",
+    "Cost before taxes": "Costo antes de impuestos",
+    "Stamp tax": "Impuesto de sellos",
+    "Cheques tax": "Impuesto de cheques",
+    "IVA": "IVA",
+    "To be credited": "A acreditar en cuenta"
 }

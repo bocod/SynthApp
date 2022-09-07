@@ -15,22 +15,24 @@ export default function Calc(){
     const [loanRate, rateInput] = useInput({ type: "number" }, {label: "Loan Rate whitout percentage symbol"});
     const [loanDueDate, dueDateInput] = useInput({ type: "date" }, {label: "Loan due date"});
     const [loanCommission, commissionInput] = useInput({ type: "number" }, {label: "Loan commission whitout percentage symbol"});
+    const [stamp, stampInput] = useInput({ type: "number" }, {label: "Loan commission whitout percentage symbol"});
+    const [cheqTax, cheqTaxInput] = useInput({ type: "number" }, {label: "Loan commission whitout percentage symbol"});
+    const [IVA, IVAInput] = useInput({ type: "number" }, {label: "Loan commission whitout percentage symbol"});
 
     const loanTerm = Math.ceil((new Date(loanDueDate) - new Date())/86400000);
     const loanInterest = (loanCapital * (loanRate/100) * (loanTerm/365)).toFixed(2);
     const loanFee = (loanCapital * (loanCommission/100)).toFixed(2);
-    const loanTotal = loanCapital && loanInterest ? (parseFloat(loanCapital) + parseFloat(loanInterest)).toFixed(2) : "";
 
-    const fwdAmount = loanCapital;
-    const [spotRate, spotRateInput] = useInput({ type: "number" }, {label: "Spot Rate"}); 
-    const spotAmount = (fwdAmount / spotRate).toFixed(2);
+    const loanSubtotal = loanCapital - loanInterest - loanFee;
+    const loanSubtotalCost = (loanCapital - loanSubtotal).toFixed(2);
 
-    const [ndfRate, ndfRateInput] = useInput({ type: "number" }, {label: "NDF Rate"}); 
-    const impliedNdfRate = (((ndfRate / spotRate) -1) * (365/loanTerm)) *100;
-    const ndfAmount = loanTotal / ndfRate;
-    const impliedInts = ndfAmount - spotAmount;
+    const grossCFT = !isNaN(loanTerm) ? ((loanSubtotalCost / (loanCapital * (loanTerm/365)))*100).toFixed(2) : "";
 
-    const impliedRate = ((impliedInts / spotAmount) * (365/loanTerm))*100;
+    const stampTax = !isNaN(stamp) ? (loanCapital * (stamp/100)).toFixed(2) : "";
+    const chequesTax = (loanCapital * (cheqTax/100)).toFixed(2);
+    const IVATax = (chequesTax * (IVA/100)).toFixed(2);
+
+    const credit = (loanSubtotal - stampTax - chequesTax - IVATax).toFixed(2);
 
     const printHandler = () => {
         const content = document.getElementById("printable");
@@ -85,65 +87,67 @@ export default function Calc(){
                 <div className="input-group mb-3">
                     <span className="input-group-text">{t("Interest")}</span>
                     <span className="input-group-text">$</span>
-                    <input value={loanInterest} type="number" className="form-control" aria-label="Loan interest" disabled />
+                    <input value={!isNaN(loanInterest) ? loanInterest : ""} type="number" className="form-control" aria-label="Loan interest" disabled />
                 </div>
                 <div className="input-group mb-3">
                     <span className="input-group-text">{t("Commission")}</span>
                     {commissionInput}<span className="input-group-text">%</span>
                     <span className="input-group-text">$</span>
-                    <input value={loanFee} type="number" className="form-control" aria-label="Total amount of capital plus interest" disabled />
+                    <input value={!isNaN(loanFee) ? loanFee : ""} type="number" className="form-control" aria-label="Total amount of commission" disabled />
                 </div>
 
-                {/* Spot stage */}
-
-                <h2>{t("Spot")}</h2>
+                {/* Subtotals */}
 
                 <div className="input-group mb-3">
-                    <span className="input-group-text">{t("Spot price")}</span>
+                    <span className="input-group-text">{t("Subtotal")}</span>
                     <span className="input-group-text">$</span>
-                    {spotRateInput}
-                </div>
-                <div className="input-group mb-3">
-                    <span className="input-group-text">{t("Loan Capital")} {t("in FC")}</span>
-                    <input value={spotAmount} type="number" className="form-control" aria-label="Total amount of capital plus interest" disabled />
+                    <input value={!isNaN(loanSubtotal) ? loanSubtotal : ""} type="number" className="form-control" aria-label="Loan Subtotal to get" disabled />
                 </div>
 
-                {/* NDF stage */}
-
-                <h2>{t("Future selling")} - {t("NDF")}</h2>
-
                 <div className="input-group mb-3">
-                    <span className="input-group-text">{t("NDF price")}</span>
+                    <span className="input-group-text">{t("Gross cost")}</span>
                     <span className="input-group-text">$</span>
-                    {ndfRateInput}
+                    <input value={!isNaN(loanSubtotalCost) ? loanSubtotalCost : ""} type="number" className="form-control" aria-label="Loan gross cost" disabled />
                 </div>
+
+                <h2>{t("Discount rate before taxes")}</h2>
+
                 <div className="input-group mb-3">
-                    <span className="input-group-text">{t("NDF implied rate")}</span>
-                    <input value={!isNaN(impliedNdfRate) ? impliedNdfRate.toFixed(2) : ""} type="number" className="form-control" aria-label="Loan interest" disabled />
+                    <span className="input-group-text">{t("Cost before taxes")}</span>
+                    <input value={!isNaN(grossCFT) ? grossCFT : ""} type="number" className="form-control" aria-label="Loan interest" disabled />
                     <span className="input-group-text">%</span>
                 </div>
-                <div className="input-group mb-3">
-                    <span className="input-group-text">{t("Implied interest")} {t("in FC")}</span>
-                    <span className="input-group-text">$</span>
-                    <input value={!isNaN(impliedInts) ? impliedInts.toFixed(2) : ""} type="number" className="form-control" aria-label="Loan interest" disabled />
-                </div>
-                <div className="input-group mb-3">
-                    <span className="input-group-text">{t("Total")} {t("in FC")}</span>
-                    <span className="input-group-text">$</span>
-                    <input value={!isNaN(ndfAmount) ? ndfAmount.toFixed(2) : ""} type="number" className="form-control" aria-label="Total in foreign currency" disabled />
-                </div>
-
-                <h2 className={impliedRate <= 0 ? "text-success" : "text-danger"}>{t("Implied synthetic rate")}</h2>
 
                 <div className="input-group mb-3">
-                    <span className="input-group-text">{t("Implied Rate")}</span>
-                    <input value={!isNaN(impliedRate) ? impliedRate.toFixed(2) : ""} type="number" className="form-control" aria-label="Loan interest" disabled />
-                    <span className="input-group-text">%</span>
+                    <span className="input-group-text">{t("Stamp tax")}</span>
+                    {stampInput}<span className="input-group-text">%</span>
+                    <span className="input-group-text">$</span>
+                    <input value={!isNaN(stampTax) ? stampTax : ""} type="number" className="form-control" aria-label="Total amount of commission" disabled />
+                </div>
+
+                <div className="input-group mb-3">
+                    <span className="input-group-text">{t("Cheques tax")}</span>
+                    {cheqTaxInput}<span className="input-group-text">%</span>
+                    <span className="input-group-text">$</span>
+                    <input value={!isNaN(chequesTax) ? chequesTax : ""} type="number" className="form-control" aria-label="Total amount of commission" disabled />
+                </div>
+
+                <div className="input-group mb-3">
+                    <span className="input-group-text">{t("IVA")}</span>
+                    {IVAInput}<span className="input-group-text">%</span>
+                    <span className="input-group-text">$</span>
+                    <input value={!isNaN(IVATax) ? IVATax : ""} type="number" className="form-control" aria-label="Total amount of commission" disabled />
+                </div>
+
+                <div className="input-group mb-3">
+                    <span className="input-group-text">{t("To be credited")}</span>
+                    <span className="input-group-text">$</span>
+                    <input value={!isNaN(credit) ? credit : ""} type="number" className="form-control" aria-label="Loan interest" disabled />
                 </div>
 
                 <div className="mb-3">
-                    <button type="button" className="btn btn-secondary" onClick={printHandler}><i className="bi bi-printer"></i> Print</button>
-                    <i className="bi bi-tree text-black-50 fw-light ms-3"> Remember "Save as PDF"</i>
+                    <button type="button" className="btn btn-secondary" onClick={printHandler}><i className="bi bi-printer"></i> {t("Print")}</button>
+                    <i className="bi bi-tree text-black-50 fw-light ms-3"> {t("print-disclosure")}</i>
                 </div>
 
                 {/* ABBR */}

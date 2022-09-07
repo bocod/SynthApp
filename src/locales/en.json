@@ -29,6 +29,8 @@
     "abbr-LC": "LC: Local Currency",
     "abbr-NDF": "NDF: Non Deliverable Forward",
 
+    "Print": "Print",
+    "print-disclosure":"Remember 'Save as PDF'",
     "Loan": "Loan",
     "Spot": "Spot",
     "Future selling": "Future Selling",
@@ -52,5 +54,16 @@
     "Spot price": "Spot price",
     "NDF price": "NDF price",
     "NDF implied rate": "NDF implied rate",
-    "Synthetic implied rate": "Synthetic implied rate"
+    "Synthetic implied rate": "Synthetic implied rate",
+
+    "DCPD Loan": "Post dated cheques discount",
+    "Commission": "Commission",
+    "Subtotal": "Subtotal",
+    "Gross cost": "Gross cost",
+    "Discount rate before taxes": "Discount rate before taxes",
+    "Cost before taxes": "Cost before taxes",
+    "Stamp tax": "Stamp tax",
+    "Cheques tax": "Cheques tax",
+    "IVA": "IVA",
+    "To be credited": "To be credited"
 }
