@@ -79,6 +79,7 @@ export default function Calc(){
                 <div className="input-group mb-3">
                     <span className="input-group-text">{t("Term")}</span>
                     <input value={!isNaN(loanTerm) ? loanTerm : ""} type="number" className="form-control" aria-label="Loan interest" disabled />
+                    <span className="input-group-text">{t("days")}</span>
                 </div>
                 <div className="input-group mb-3">
                     <span className="input-group-text">{t("Interest")}</span>
