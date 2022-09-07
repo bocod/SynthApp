@@ -34,7 +34,7 @@ export default function Navbar(){
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                 <div className="navbar-nav">
                     <NavLink to={"/home"}  className="nav-link active" aria-current="page">{t("Nav-Home")}</NavLink>
-                    <NavLink to={"/calculate"} className="nav-link" href="/home">{t("Nav-Calc")}</NavLink>
+                    {/* <NavLink to={"/calculate"} className="nav-link" href="/home">{t("Nav-Calc")}</NavLink> */}
                     <NavLink to={"/contact"} className="nav-link" href="/home">{t("Nav-Contact")}</NavLink>
                     <li className="nav-item dropdown">
                         <span className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">

@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 export default function Calc(){
 
@@ -7,7 +8,7 @@ export default function Calc(){
 
     function useInput({ type }, { label }) {
         const [value, setValue] = useState("");
-        const input = <input className="form-control" aria-label={label} value={value} onChange={e => setValue(e.target.value)} type={type} />;
+        const input = <input className="form-control" aria-label={label} value={value} onChange={e => setValue(e.target.value)} type={type} required />;
         return [value, input];
     }
 
@@ -30,94 +31,117 @@ export default function Calc(){
 
     const impliedRate = ((impliedInts / spotAmount) * (365/loanTerm))*100;
 
+    const printHandler = () => {
+        const content = document.getElementById("printable");
+        const disclosure = document.getElementById("disclosure")
+        const printable = document.getElementById("contentToPrint").contentWindow;
+        printable.document.open();
+        printable.document.write(content.innerHTML);
+        printable.document.write(disclosure.innerHTML);
+        printable.document.close();
+        printable.focus();
+        printable.print();
+    }
+
     return (
         <>
+            <div className="container mt-3">
+                <h2>{t("how to use")}</h2>
+                <p className='text-danger'><strong>{t("calc-use-1")}</strong></p>
+                <p>{t("calc-use-2")}</p>
+                <p>{t("calc-use-3")}</p>
+                <p>{t("calc-use-4")} <strong className='text-danger'>{t("calc-use-5")}</strong></p>
+            </div>
 
-            <div className="container mt-3" style={{"maxWidth": "500px"}}>
+            <form className="container mt-3" style={{"maxWidth": "500px"}} id="printable">
 
                 {/* Loan stage user input */}
 
-                <h2>{t("calc-title1")}</h2>
+                <h2>{t("LC Loan")}</h2>
 
                 <div className="input-group mb-3">
-                    <span className="input-group-text">{t("calc-input1")}</span>
+                    <span className="input-group-text">{t("Loan Capital")}</span>
                     <span className="input-group-text">$</span>
                     {capitalInput}
                 </div>
                 <div className="input-group mb-3">
-                    <span className="input-group-text">{t("calc-input2")}</span>
+                    <span className="input-group-text">{t("Loan Rate")}</span>
                     {rateInput}
                     <span className="input-group-text">%</span>
                 </div>
                 <div className="input-group mb-3">
-                    <span className="input-group-text">{t("calc-input3")}</span>
+                    <span className="input-group-text">{t("Due date")}</span>
                     {dueDateInput}
                 </div>
 
                 {/* Auto calculate */}
                 
                 <div className="input-group mb-3">
-                    <span className="input-group-text">{t("calc-input4")}</span>
+                    <span className="input-group-text">{t("Term")}</span>
                     <input value={!isNaN(loanTerm) ? loanTerm : ""} type="number" className="form-control" aria-label="Loan interest" disabled />
                 </div>
                 <div className="input-group mb-3">
-                    <span className="input-group-text">{t("calc-input5")}</span>
+                    <span className="input-group-text">{t("Interest")}</span>
                     <span className="input-group-text">$</span>
                     <input value={loanInterest} type="number" className="form-control" aria-label="Loan interest" disabled />
                 </div>
                 <div className="input-group mb-3">
-                    <span className="input-group-text">{t("calc-input6")}</span>
+                    <span className="input-group-text">{t("Total")}</span>
                     <span className="input-group-text">$</span>
                     <input value={loanTotal} type="number" className="form-control" aria-label="Total amount of capital plus interest" disabled />
                 </div>
 
                 {/* Spot stage */}
 
-                <h2>{t("calc-title2")}</h2>
+                <h2>{t("Spot")}</h2>
 
                 <div className="input-group mb-3">
-                    <span className="input-group-text">{t("calc-input7")}</span>
+                    <span className="input-group-text">{t("Spot price")}</span>
                     <span className="input-group-text">$</span>
                     {spotRateInput}
                 </div>
                 <div className="input-group mb-3">
-                    <span className="input-group-text">{t("calc-input8")}</span>
+                    <span className="input-group-text">{t("Loan Capital")} {t("in FC")}</span>
                     <input value={spotAmount} type="number" className="form-control" aria-label="Total amount of capital plus interest" disabled />
                 </div>
 
                 {/* NDF stage */}
 
-                <h2>{t("calc-title3")}</h2>
+                <h2>{t("Future selling")} - {t("NDF")}</h2>
 
                 <div className="input-group mb-3">
-                    <span className="input-group-text">{t("calc-input9")}</span>
+                    <span className="input-group-text">{t("NDF price")}</span>
                     <span className="input-group-text">$</span>
                     {ndfRateInput}
                 </div>
                 <div className="input-group mb-3">
-                    <span className="input-group-text">{t("calc-input10")}</span>
+                    <span className="input-group-text">{t("NDF implied rate")}</span>
                     <input value={!isNaN(impliedNdfRate) ? impliedNdfRate.toFixed(2) : ""} type="number" className="form-control" aria-label="Loan interest" disabled />
                     <span className="input-group-text">%</span>
                 </div>
                 <div className="input-group mb-3">
-                    <span className="input-group-text">{t("calc-input11")}</span>
+                    <span className="input-group-text">{t("Implied interest")} {t("in FC")}</span>
                     <span className="input-group-text">$</span>
                     <input value={!isNaN(impliedInts) ? impliedInts.toFixed(2) : ""} type="number" className="form-control" aria-label="Loan interest" disabled />
                 </div>
                 <div className="input-group mb-3">
-                    <span className="input-group-text">{t("calc-input12")}</span>
+                    <span className="input-group-text">{t("Total")} {t("in FC")}</span>
                     <span className="input-group-text">$</span>
                     <input value={!isNaN(ndfAmount) ? ndfAmount.toFixed(2) : ""} type="number" className="form-control" aria-label="Total in foreign currency" disabled />
                 </div>
 
-                <h2 className={impliedRate <= 0 ? "text-success" : "text-danger"}>{t("calc-title4")}</h2>
+                <h2 className={impliedRate <= 0 ? "text-success" : "text-danger"}>{t("Implied synthetic rate")}</h2>
 
                 <div className="input-group mb-3">
-                    <span className="input-group-text">{t("calc-input13")}</span>
+                    <span className="input-group-text">{t("Implied Rate")}</span>
                     <input value={!isNaN(impliedRate) ? impliedRate.toFixed(2) : ""} type="number" className="form-control" aria-label="Loan interest" disabled />
                     <span className="input-group-text">%</span>
                 </div>
 
+                <div className="mb-3">
+                    <button type="button" className="btn btn-secondary" onClick={printHandler}><i className="bi bi-printer"></i> Print</button>
+                    <i className="bi bi-tree text-black-50 fw-light ms-3"> Remember "Save as PDF"</i>
+                </div>
 
                 {/* ABBR */}
 
@@ -130,7 +154,9 @@ export default function Calc(){
                         <p className="card-text">{t("abbr-NDF")}</p>
                     </div>
                 </div>
-            </div>
+            </form>
+            <iframe title="Synthetic loan detail" id="contentToPrint" style={{"height": "0px", "width": "0px", "position": "absolute"}}></iframe>
+            
         </>
     )
 }

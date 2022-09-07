@@ -43,7 +43,7 @@ function App() {
                         <Home/>
                     </Suspense>
                 } />
-                <Route path="/calculate" element={
+                <Route path="/calculate-synthetic" element={
                     <Suspense fallback={<Loader/>}>
                         <Calculate/>
                     </Suspense>
