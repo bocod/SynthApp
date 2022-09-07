@@ -11,5 +11,30 @@
     "appHeader": "Préstamo sintético",
     "descTitle": "¿En qué consiste?",
     "description": "Es una herramienta financiera por la que se toma un préstamo en moneda local por importe equivalente a los USD necesitados al tipo de cambio SPOT, cuyo destino será aplicarlos, en simultáneo, a la venta de dolar futuro a igual plazo que el préstamo, y por importe equivalente a capital + intereses. La operación compensa por diferencias de tipo de cambio: Futuro vendido VS Com. BCRA 3500 de la fecha de vencimiento.",
-    "calc-btn": "Calcular"
+    "calc-btn": "Calcular",
+
+    "abbr-title" : "Abreviaturas",
+    "abbr-subtitle" : "Guía de términos",
+    "abbr-FC": "ME: Moneda Extranjera",
+    "abbr-LC": "ML: Moneda Local",
+    "abbr-NDF": "NDF: Non Deliverable Forward",
+
+    "calc-title1": "Préstamo en ML",
+    "calc-title2": "Spot",
+    "calc-title3": "Venta de futuros - NDF",
+    "calc-title4": "TASA IMPLICITA SINTETICO",
+
+    "calc-input1" : "Capital del préstamo",
+    "calc-input2" : "Tasa del préstamo",
+    "calc-input3" : "Fecha de vencimiento",
+    "calc-input4" : "Plazo",
+    "calc-input5" : "Intereses",
+    "calc-input6" : "Total",
+    "calc-input7" : "Cotización SPOT",
+    "calc-input8" : "Capital del préstamo en ME",
+    "calc-input9" : "Cotización NDF",
+    "calc-input10" : "Tasa implícita NDF",
+    "calc-input11" : "Interés implícito en ME",
+    "calc-input12" : "Total en ME",
+    "calc-input13" : "Tasa implícita sintético"
 }
