@@ -5,34 +5,28 @@ export default function Calc(){
 
     const { t } = useTranslation();
 
-    function useInput({ type }, { label }) {
+    function useInput({ type }, { label }, { placeholder } ) {
         const [value, setValue] = useState("");
-        const input = <input className="form-control" aria-label={label} value={value} onChange={e => setValue(e.target.value)} type={type} required />;
+        const input = <input className="form-control" aria-label={label} value={value} onChange={e => setValue(e.target.value)} type={type} placeholder={placeholder} required />;
         return [value, input];
     }
 
-    const [loanCapital, capitalInput] = useInput({ type: "number" }, {label: "Loan Capital Amount"});
-    const [loanRate, rateInput] = useInput({ type: "number" }, {label: "Loan Rate whitout percentage symbol"});
-    const [loanDueDate, dueDateInput] = useInput({ type: "date" }, {label: "Loan due date"});
-    const [loanCommission, commissionInput] = useInput({ type: "number" }, {label: "Loan commission whitout percentage symbol"});
-    const [stamp, stampInput] = useInput({ type: "number" }, {label: "Loan commission whitout percentage symbol"});
-    const [cheqTax, cheqTaxInput] = useInput({ type: "number" }, {label: "Loan commission whitout percentage symbol"});
-    const [IVA, IVAInput] = useInput({ type: "number" }, {label: "Loan commission whitout percentage symbol"});
+    const [cautionCapital, capitalInput] = useInput({ type: "number" }, {label: "Caution Capital Amount"}, { placeholder: "123456.99" });
+    const [cautionRate, rateInput] = useInput({ type: "number" }, {label: "Caution Rate whitout percentage symbol"}, { placeholder: "TNA - e.g.: '7' or '8.25'" });
+    const [cautionDueDate, dueDateInput] = useInput({ type: "date" }, {label: "Caution due date"}, { placeholder: undefined });
+    const [exchangeCommission, commissionInput] = useInput({ type: "number" }, {label: "Exchange commission whitout percentage symbol"}, { placeholder: "0.15" });
+    const [mFee, mFeeInput] = useInput({ type: "number" }, {label: "Market fee whitout percentage symbol"}, { placeholder: "0.045" });
+    const [IVA, IVAInput] = useInput({ type: "number" }, {label: "IVA or VAT whitout percentage symbol"}, { placeholder: "21" });
 
-    const loanTerm = Math.ceil((new Date(loanDueDate) - new Date())/86400000);
-    const loanInterest = (loanCapital * (loanRate/100) * (loanTerm/365)).toFixed(2);
-    const loanFee = (((loanCommission/100)/30* loanTerm) * loanCapital).toFixed(2);
-
-    const loanSubtotal = loanCapital - loanInterest - loanFee;
-    const loanSubtotalCost = (loanCapital - loanSubtotal).toFixed(2);
-
-    const grossCFT = !isNaN(loanTerm) ? ((loanSubtotalCost / (loanCapital * (loanTerm/365)))*100).toFixed(2) : "";
-
-    const stampTax = !isNaN(stamp) ? (loanCapital * (stamp/100)).toFixed(2) : "";
-    const chequesTax = (loanCapital * (cheqTax/100)).toFixed(2);
-    const IVATax = (chequesTax * (IVA/100)).toFixed(2);
-
-    const credit = (loanSubtotal - stampTax - chequesTax - IVATax).toFixed(2);
+    const cautionTerm = Math.ceil((new Date(cautionDueDate) - new Date())/86400000);
+    const grossProfit = (cautionCapital * (cautionRate/100) * (cautionTerm/365)).toFixed(2);
+    const exchangeFee = (((exchangeCommission/100)/30* cautionTerm) * cautionCapital).toFixed(2);
+    const IVATax = (exchangeFee * (IVA/100)).toFixed(2);
+    const marketFee = (cautionCapital * (mFee/100)).toFixed(2);
+    
+    const cautionCost = (Number(exchangeFee) + Number(IVATax) + Number(marketFee)).toFixed(2);
+    const netProfit = (Number(grossProfit) - Number(cautionCost)).toFixed(2);
+    const credit = (Number(cautionCapital) + Number(netProfit)).toFixed(2);
 
     const printHandler = () => {
         const content = document.getElementById("printable");
@@ -81,13 +75,13 @@ export default function Calc(){
                 
                 <div className="input-group mb-3">
                     <span className="input-group-text">{t("Term")}</span>
-                    <input value={!isNaN(loanTerm) ? loanTerm : ""} type="number" className="form-control" aria-label="Loan interest" disabled />
+                    <input value={!isNaN(cautionTerm) ? cautionTerm : ""} type="number" className="form-control" aria-label="Loan interest" disabled />
                     <span className="input-group-text">{t("days")}</span>
                 </div>
                 <div className="input-group mb-3">
                     <span className="input-group-text">{t("Gross profit")}</span>
                     <span className="input-group-text">$</span>
-                    <input value={!isNaN(loanInterest) ? loanInterest : ""} type="number" className="form-control" aria-label="Loan interest" disabled />
+                    <input value={!isNaN(grossProfit) ? grossProfit : ""} type="number" className="form-control" aria-label="Loan interest" disabled />
                 </div>
 
                 <h2>{t("Commissions, fees and taxes")}</h2>
@@ -96,7 +90,7 @@ export default function Calc(){
                     <span className="input-group-text">{t("Commission")}</span>
                     {commissionInput}<span className="input-group-text">%</span>
                     <span className="input-group-text">$</span>
-                    <input value={!isNaN(loanFee) ? loanFee : ""} type="number" className="form-control" aria-label="Total amount of commission" disabled />
+                    <input value={!isNaN(exchangeFee) ? exchangeFee : ""} type="number" className="form-control" aria-label="Total amount of commission" disabled />
                 </div>
 
                 <div className="input-group mb-3">
@@ -108,29 +102,29 @@ export default function Calc(){
 
                 <div className="input-group mb-3">
                     <span className="input-group-text">{t("Market fee")}</span>
-                    {stampInput}<span className="input-group-text">%</span>
+                    {mFeeInput}<span className="input-group-text">%</span>
                     <span className="input-group-text">$</span>
-                    <input value={!isNaN(stampTax) ? stampTax : ""} type="number" className="form-control" aria-label="Total amount of commission" disabled />
+                    <input value={!isNaN(marketFee) ? marketFee : ""} type="number" className="form-control" aria-label="Total amount of commission" disabled />
                 </div>
 
                 {/* Subtotals */}
 
                 <div className="input-group mb-3">
+                    <span className="input-group-text">{t("Caution cost")}</span>
+                    <span className="input-group-text">$</span>
+                    <input value={!isNaN(cautionCost) ? cautionCost : ""} type="number" className="form-control" aria-label="Loan gross cost" disabled />
+                </div>
+
+                <div className="input-group mb-3">
                     <span className="input-group-text">{t("Net profit")}</span>
                     <span className="input-group-text">$</span>
-                    <input value={!isNaN(loanSubtotal) ? loanSubtotal : ""} type="number" className="form-control" aria-label="Loan Subtotal to get" disabled />
+                    <input value={!isNaN(netProfit) ? netProfit : ""} type="number" className="form-control" aria-label="Loan Subtotal to get" disabled />
                 </div>
 
                 <div className="input-group mb-3">
                     <span className="input-group-text">{t("To be credited")}</span>
                     <span className="input-group-text">$</span>
                     <input value={!isNaN(credit) ? credit : ""} type="number" className="form-control" aria-label="Loan interest" disabled />
-                </div>
-
-                <div className="input-group mb-3">
-                    <span className="input-group-text">{t("Gross cost")}</span>
-                    <span className="input-group-text">$</span>
-                    <input value={!isNaN(loanSubtotalCost) ? loanSubtotalCost : ""} type="number" className="form-control" aria-label="Loan gross cost" disabled />
                 </div>
 
                 <div className="mb-3">
@@ -150,8 +144,9 @@ export default function Calc(){
                     </div>
                 </div>
             </form>
+
             <iframe title="Synthetic loan detail" id="contentToPrint" style={{"height": "0px", "width": "0px", "position": "absolute"}}></iframe>
-            
+
         </>
     )
 }
