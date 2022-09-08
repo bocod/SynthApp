@@ -73,8 +73,15 @@
     "To be credited": "To be credited",
 
     "Stock Caution": "Stock Caution",
+    "Commissions, fees and taxes": "Commissions, fees and taxes",
     "Capital to caution": "Capital to caution",
     "Rate": "Rate",
     "Gross profit": "Gross profit",
-    "Net profit": "Net profit"
+    "Net profit": "Net profit",
+    "Market fee": "Market fee",
+    "Caution cost": "Caution cost",
+
+    "ref-commission": "Commission: 0,15%",
+    "ref-IVA": "VAT: 21%",
+    "ref-market-fee": "Market fee: 0,045%"
 }

@@ -73,10 +73,13 @@
     "To be credited": "A acreditar en cuenta",
 
     "Stock Caution": "Caución Bursatil",
+    "Commissions, fees and taxes": "Comisiones, derechos e impuestos",
     "Capital to caution": "Capital a caucionar",
     "Rate": "Tasa",
     "Gross profit": "Interés bruto",
     "Net profit": "Interés neto",
+    "Market fee": "Derechos de mercado",
+    "Caution cost": "Costo de caución",
 
     "ref-commission": "Comisión: 0,15%",
     "ref-IVA": "IVA: 21%",
