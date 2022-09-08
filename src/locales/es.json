@@ -1,5 +1,6 @@
 {
     "appTitle": "FinApp",
+    "appSubtitle" : "Hacking finance for easy calculating!",
 
     "Nav-Home": "Home",
     "Nav-Calc": "Calcular",
@@ -7,6 +8,11 @@
     "language": "Idioma",
     "english": "Inglés",
     "spanish":"Español",
+
+    "How it works": "Cómo funciona",
+    "HIW-1": "A continuación encontrarás un listado de productos financieros.",
+    "HIW-2": "Cada uno consta de: Nombre, Breve explicación y Calculadora.",
+    "HIW-3": "El sitio no almacena los datos calculados, pero si necesitas puedes guardar el cálculo a PDF con el botón Imprimir que encontrarás al final de la calculadora.",
 
     "Synth-appHeader": "Préstamo sintético",
     "Synth-descTitle": "¿En qué consiste?",
@@ -20,6 +26,13 @@
     "DCPD-description-2": "El tenedor de los cheques transfiere los derechos de cobro (endoso o cesión) a una entidad a cambio de que esta le adelante el importe.",
     "DCPD-description-3": "La entidad adelanta los fondos previo restar tasas y comisiones.",
 
+    "Caution-description-1":"Es una herramienta crediticia que opera entre privados a través del mercado financiero.",
+    "Caution-description-2":"Por un lado, una persona (colocadora) tiene exceso de dinero y decide colocarlo en préstamo en la bolsa (caución colocadora).",
+    "Caution-description-3":"Por otro lado, otra persona (tomadora) necesita dinero para lo que deposita en garantía títulos valores (acciones, bonos, CPD, ...).",
+    "Caution-description-4":"Se pacta una tasa y un plazo. Al vencimiento, el tomador devuelve el dinero tomado más los intereses.",
+    "Caution-description-5":"Si cumplido el plazo el tomador incumple, se ejecuta la garantía y de allí se cobra el colocador.",
+
+
     "how to use": "Cómo usar la calculadora",
     "calc-use-1": "Todos los campos deben completarse.",
     "calc-use-2": "A medidas que completes cada entrada, la aplicación automáticamente hará cálculos y mostrará los resultados.",
@@ -27,6 +40,7 @@
     "calc-use-4": "Elige siempre la opción de 'Guardar a PDF'.",
     "calc-use-5": "Evita imprimir en papel.",
 
+    "references-title": "Referencias",
     "abbr-title" : "Abreviaturas",
     "abbr-subtitle" : "Guía de términos",
     "abbr-FC": "ME: Moneda Extranjera",
@@ -69,5 +83,18 @@
     "Stamp tax": "Impuesto de sellos",
     "Cheques tax": "Impuesto de cheques",
     "IVA": "IVA",
-    "To be credited": "A acreditar en cuenta"
+    "To be credited": "Acredita al vencimiento",
+
+    "Stock Caution": "Caución Bursatil",
+    "Commissions, fees and taxes": "Comisiones, tasas e impuestos",
+    "Capital to caution": "Capital a caucionar",
+    "Rate": "Tasa",
+    "Gross profit": "Interés bruto",
+    "Net profit": "Interés neto",
+    "Market fee": "Derechos de mercado",
+    "Caution cost": "Costo de caución",
+
+    "ref-commission": "Comisión: 0,15%",
+    "ref-IVA": "IVA: 21%",
+    "ref-market-fee": "Market fee: 0,045%"
 }
