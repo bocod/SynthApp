@@ -1,5 +1,6 @@
 {
     "appTitle": "FinApp",
+    "appSubtitle" : "Hacking finance for easy calculating!",
 
     "Nav-Home": "Home",
     "Nav-Calc": "Calculate",
@@ -7,6 +8,11 @@
     "language": "Language",
     "english": "English",
     "spanish":"Spanish",
+
+    "How it works": "How it works",
+    "HIW-1": "Next, you will find a dropdown menu with a list of financial products.",
+    "HIW-2": "Each item contains: Name of the product, brief explanation and a calculator.",
+    "HIW-3": "The site does not store data or calculations, so if you need to keep results feel free of clicking the 'Print' button at the end of the calculator, and Save to PFD.",
 
     "Synth-appHeader": "Synthetic loan",
     "Synth-descTitle": "What is it?",
@@ -19,6 +25,12 @@
     "DCPD-description-1": "Is a financial tool for advancing the payment deadlines in post dated cheques.",
     "DCPD-description-2": "The cheques holder transfers the collection rights to an entity in exchange for the advancing of cash.",
     "DCPD-description-3": "The entity advance the cash discounting taxes and commission.",
+
+    "Caution-description-1":"It is a credit tool between privates through financial market.",
+    "Caution-description-2":"First, an investor has liquidity and decides to offer it in the financial market.",
+    "Caution-description-3":"By the other hand, another investor needs and ask for money offering his stocks as guarantee (stocks, bonds, ...).",
+    "Caution-description-4":"Both agree interest rate and a due date. At maturity, the caution taker must return the money plus interest.",
+    "Caution-description-5":"If he defaults, the guarentee is executed and the caution investor recieves his complete payment (capital plus interest).",
 
     "how to use": "How to use the calculator",
     "calc-use-1": "All input fields must be fulfilled.",
