@@ -76,14 +76,14 @@ export default function Landing(){
                 <div className="accordion-item">
                     <h2 className="accordion-header" id="headingN">
                     <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseN" aria-expanded="false" aria-controls="collapseN">
-                        More calculators...
+                        {t("More calculators")}
                     </button>
                     </h2>
                     <div id="collapseN" className="accordion-collapse collapse" aria-labelledby="headingN" data-bs-parent="#accordionExample">
                     <div className="accordion-body">
-                        <p><strong>Upcoming next...</strong></p>
-                        <p>New features are being developed to make your financial calculations easier!</p>
-                        <p><strong>Stay tuned!</strong></p>
+                        <p><strong>{t("Upcoming next")}</strong></p>
+                        <p>{t("New features to be")}</p>
+                        <p><strong>{t("Stay tuned!")}</strong></p>
                     </div>
                     </div>
                 </div>
