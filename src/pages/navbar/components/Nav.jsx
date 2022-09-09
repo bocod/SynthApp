@@ -37,11 +37,21 @@ export default function Navbar(){
                         <a href="https://www.linkedin.com/in/agustinboccio/" target="_blank" rel="noreferrer" className="nav-link">{t("Nav-Contact")}</a>
                         <li className="nav-item dropdown">
                             <span className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                {t("language")}
+                            {t("language")}
                             </span>
                             <ul className="dropdown-menu dropdown-menu-end dropdown-menu-dark">
-                                <li><span className="dropdown-item" onClick={() => handleLanguageSelectorChange("en")}>{t("english")}</span></li>
-                                <li><span className="dropdown-item" onClick={() => handleLanguageSelectorChange("es")}>{t("spanish")}</span></li>
+                                <li>
+                                    <span className="dropdown-item" onClick={() => handleLanguageSelectorChange("en")}>
+                                        <span class="fi fi-gb"></span>
+                                        {"    "}{t("english")}
+                                    </span>
+                                </li>
+                                <li>
+                                    <span className="dropdown-item" onClick={() => handleLanguageSelectorChange("es")}>
+                                        <span class="fi fi-es"></span>
+                                        {"    "}{t("spanish")}
+                                    </span>
+                                </li>
                             </ul>
                         </li>
                     </div>
