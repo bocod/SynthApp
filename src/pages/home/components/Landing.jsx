@@ -49,6 +49,10 @@ export default function Landing() {
         [
             "over-desc-1",
             "over-desc-2",
+            "over-desc-3",
+            "over-desc-4",
+            "over-desc-5",
+            "over-desc-6",
         ],
         "/",
         "collapsed",
@@ -110,7 +114,7 @@ export default function Landing() {
                 </article>
             </section>
             <div className="accordion" id="accordionSynthetic">
-                {/* {acuerdoItem} */}
+                {acuerdoItem}
                 {syntheticItem}
                 {dCPDItem}
                 {cautionItem}
