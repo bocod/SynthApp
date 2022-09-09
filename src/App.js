@@ -13,6 +13,7 @@ const Home = React.lazy(() => import("./pages/home/index"));
 const Synthetic = React.lazy(() => import("./pages/synthetic/index"));
 const DCPD = React.lazy(() => import("./pages/dcpd/index"));
 const Caution = React.lazy(() => import("./pages/caution/index"));
+const Overdraft = React.lazy(() => import("./pages/overdraft/index"));
 
 
 function App() {
@@ -45,6 +46,11 @@ function App() {
                         <Home/>
                     </Suspense>
                 } />
+                <Route path="/calculate-overdraft" element={
+                    <Suspense fallback={<Loader/>}>
+                        <Overdraft/>
+                    </Suspense>
+                } />
                 <Route path="/calculate-synthetic" element={
                     <Suspense fallback={<Loader/>}>
                         <Synthetic/>
@@ -65,7 +71,7 @@ function App() {
                         <Navigate to="/home"  />
                     </Suspense>
                 } />
-                <Route path="**" element={
+                <Route path="*/*" element={
                     <Suspense fallback={<Loader/>}>
                         <Navigate to="/home"  />
                     </Suspense>

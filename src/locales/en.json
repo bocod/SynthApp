@@ -70,7 +70,7 @@
 
     "LC Loan": "LC Loan",
     "Loan Capital" : "Loan Capital",
-    "Loan Rate" : "Loan Rate",
+    "Loan Rate" : "Loan Rate (APR)",
     "Due date" : "Due date",
     "Term" : "Term",
     "days" : "days",
@@ -95,7 +95,7 @@
     "Cost before taxes": "Cost before taxes",
     "Stamp tax": "Stamp tax",
     "Cheques tax": "Cheques tax",
-    "IVA": "IVA",
+    "IVA": "VAT",
     "To be credited": "To be credited",
 
     "Stock Caution": "Stock Caution",
@@ -109,5 +109,7 @@
 
     "ref-commission": "Commission: 0,15%",
     "ref-IVA": "VAT: 21%",
-    "ref-market-fee": "Market fee: 0,045%"
+    "ref-market-fee": "Market fee: 0,045%",
+
+    "To be cancelled": "To be cancelled"
 }

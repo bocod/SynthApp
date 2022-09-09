@@ -43,7 +43,7 @@ export default function Landing() {
         return accItem;
     }
 
-    const acuerdoItem = useAccItem(
+    const overdraftItem = useAccItem(
         "One",
         "Overdraft",
         [
@@ -54,7 +54,7 @@ export default function Landing() {
             "over-desc-5",
             "over-desc-6",
         ],
-        "/",
+        "/calculate-overdraft",
         "collapsed",
         false,
         ""
@@ -105,7 +105,7 @@ export default function Landing() {
         <div className="container mt-3">
             <section>
                 <h1>{t("appTitle")}</h1>
-                <h3>{t("appSubtitle")}</h3>
+                <h2 className="fs-5">{t("appSubtitle")}</h2>
                 <article className="mt-3">
                     <h2>{t("How it works")}</h2>
                     <p>{t("HIW-1")}</p>
@@ -114,7 +114,7 @@ export default function Landing() {
                 </article>
             </section>
             <div className="accordion" id="accordionSynthetic">
-                {acuerdoItem}
+                {overdraftItem}
                 {syntheticItem}
                 {dCPDItem}
                 {cautionItem}
