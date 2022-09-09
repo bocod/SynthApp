@@ -20,8 +20,13 @@
     "Stay tuned!": "Mantente alerta!",
 
     "Overdraft": "Acuerdo",
-    "over-desc-1": "Producto para girar en descubierto",
-    "over-desc-2": "girar chequessssss!",
+    "over-desc-1": "Herramienta financiera por la que un banco pone a disposición de su cliente un importe determinado de dinero, a una tasa pactada y por un plazo determinado.",
+    "over-desc-2": "Por lo que el cliente (usuario bancario) tiene a disposición una suma de dinero que puede o no utilizar según necesite.",
+    "over-desc-3": "Ya que no hay un desembolso o acreditación en la cuenta del cliente, sino una 'puesta a disposición'.",
+    "over-desc-4": "De usar el acuerdo, puede cancelar la suma tomada en cualquier momento dentro del plazo de vigencia del acuerdo, incluso en pagos parciales.",
+    "over-desc-5": "En tal caso, el cliente solo pagaría intereses si hace uso del acuerdo y calculables por el período utilizado.",
+    "over-desc-6": "En algunos casos, podrían aplicar comisiones, incluso por el solo hecho de poner el acuerdo a disposición del cliente.",
+
 
     "Synth-appHeader": "Préstamo sintético",
     "Synth-descTitle": "¿En qué consiste?",

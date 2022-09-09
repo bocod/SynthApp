@@ -20,8 +20,13 @@
     "Stay tuned!": "Stay tuned!",
 
     "Overdraft": "Overdraft",
-    "over-desc-1": "Overdraft you banking account",
-    "over-desc-2": "spread cheques everywhere!",
+    "over-desc-1": "Financial tool, through wich a bank puts at the disposal of a client an amount of money, at a pre-established rate and to a certain period.",
+    "over-desc-2": "So the client (bank user) has at his disposal an amount of money that can use according to his own needs.",
+    "over-desc-3": "As there is no credit on account, but 'availability'.",
+    "over-desc-4": "If there exist a use of the overdraft, the amount used may be cancelled anytime in between the period of validity, even partially.",
+    "over-desc-5": "In that case, the client would only pay interest for using the overdraft, for the amount and term used.",
+    "over-desc-6": "In some cases, commissions should apply, even if the client doen't make use of the overdraft by the mere fact of having the overdraft available.",
+
 
     "Synth-appHeader": "Synthetic loan",
     "Synth-descTitle": "What is it?",
