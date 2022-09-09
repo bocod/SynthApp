@@ -19,6 +19,10 @@
     "New features to be":"New features are being developed to make your financial calculations easier!",
     "Stay tuned!": "Stay tuned!",
 
+    "Overdraft": "Overdraft",
+    "over-desc-1": "Overdraft you banking account",
+    "over-desc-2": "spread cheques everywhere!",
+
     "Synth-appHeader": "Synthetic loan",
     "Synth-descTitle": "What is it?",
     "Synth-description-1": "Is a financial tool, through wich you get a bullet loan in your local currency, for an equivalent amount to the foreign currency needed at the SPOT exchange rate.",
