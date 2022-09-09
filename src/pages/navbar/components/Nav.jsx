@@ -52,6 +52,12 @@ export default function Navbar(){
                                         {"    "}{t("spanish")}
                                     </span>
                                 </li>
+                                <li>
+                                    <span className="dropdown-item" onClick={() => handleLanguageSelectorChange("cat")}>
+                                        <span class="fi fi-es-ct"></span>
+                                        {"    "}{t("catalan")}
+                                    </span>
+                                </li>
                             </ul>
                         </li>
                     </div>

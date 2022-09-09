@@ -8,6 +8,7 @@
     "language": "Idioma",
     "english": "Inglés",
     "spanish":"Español",
+    "catalan":"Catalán",
 
     "How it works": "Cómo funciona",
     "HIW-1": "A continuación encontrarás un listado de productos financieros.",
@@ -29,7 +30,6 @@
 
 
     "Synth-appHeader": "Préstamo sintético",
-    "Synth-descTitle": "¿En qué consiste?",
     "Synth-description-1": "Es una herramienta financiera por la que se toma un préstamo en moneda local por importe equivalente a los USD necesitados al tipo de cambio SPOT.",
     "Synth-description-2": "Cuyo destino será aplicarlos, en simultáneo, a la venta de dolar futuro a igual plazo que el préstamo, y por importe equivalente a capital + intereses.",
     "Synth-description-3": "La operación compensa por diferencias de tipo de cambio: Futuro vendido VS Com. BCRA 3500 de la fecha de vencimiento.",
