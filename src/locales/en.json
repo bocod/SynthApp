@@ -70,7 +70,7 @@
 
     "LC Loan": "LC Loan",
     "Loan Capital" : "Loan Capital",
-    "Loan Rate" : "Loan Rate",
+    "Loan Rate" : "Loan Rate (APR)",
     "Due date" : "Due date",
     "Term" : "Term",
     "days" : "days",
